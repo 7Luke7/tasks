@@ -13,7 +13,7 @@ const page = (props: any) => {
   const get_task_name = async () => {
     const response = await axios({
       method: "GET",
-      url: `http://localhost:5001/tasks/${props.params.id}`,
+      url: `https://tasks-self.vercel.app/tasks/${props.params.id}`,
     })
 
     if (response.status === 200) {
@@ -24,7 +24,7 @@ const page = (props: any) => {
     e.preventDefault()
     const response = await axios({
       method: "PATCH",
-      url: `http://localhost:5001/tasks/${props.params.id}`,
+      url: `https://tasks-self.vercel.app/tasks/${props.params.id}`,
       data: {
         task: updateInput
       }
