@@ -18,7 +18,7 @@ const TodoLanding = () => {
     const retrieveTasks = async () => {
       const requestTasks = await axios({
         method: "GET",
-        url: "http://localhost:5001/tasks"
+        url: "https://tasks-self.vercel.app/tasks"
       })
       if (requestTasks.status === 200) {
         setTasks(requestTasks.data)
@@ -38,7 +38,7 @@ const TodoLanding = () => {
       } else {
         const create_task = await axios({
           method: "POST",
-          url: "http://localhost:5001/tasks",
+          url: "https://tasks-self.vercel.app/tasks",
           data: {
             task: taskInput
           }
@@ -55,7 +55,7 @@ const TodoLanding = () => {
     const DeleteHandler = async (id: string) => {
       const deleteTask = await axios({
         method: "DELETE",
-        url: `http://localhost:5001/tasks/${id}`
+        url: `https://tasks-self.vercel.app/tasks/${id}`
       })
       if (deleteTask.status === 200) {
         retrieveTasks()
