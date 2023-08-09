@@ -15,6 +15,7 @@ const TodoLanding = () => {
       retrieveTasks()
     }, [])
 
+    axios.defaults.withCredentials = true
     const retrieveTasks = async () => {
       const requestTasks = await axios({
         method: "GET",
