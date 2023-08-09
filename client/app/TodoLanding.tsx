@@ -19,7 +19,7 @@ const TodoLanding = () => {
     const retrieveTasks = async () => {
       const requestTasks = await axios({
         method: "GET",
-        url: "https://tasks-self.vercel.app/tasks"
+        url: "https://tasks-self.vercel.app"
       })
       if (requestTasks.status === 200) {
         setTasks(requestTasks.data)
