@@ -5,10 +5,14 @@ const app = express()
 const port = 5001
 const cors = require("cors")
 
-app.use(cors({
-    origin: ["https://deploy-mern-tasks.vercel.app"],
-    methods: ["GET", "POST", "PATCH", "DELETE"]"
-}))
+app.use(cors(
+{
+  "origin": "*",
+  "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
+  "preflightContinue": false,
+  "optionsSuccessStatus": 204
+}
+))
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }));
 app.use("/tasks", require("./routes"))
